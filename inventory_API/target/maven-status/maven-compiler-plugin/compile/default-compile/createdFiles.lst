@@ -1,0 +1,14 @@
+org\msuhail\java\home_project\DAO\Inventory_DAO.class
+org\msuhail\java\home_project\model\Users_Auth.class
+org\msuhail\java\home_project\mapper\Users_Auth_mapper.class
+org\msuhail\java\home_project\model\Inventory.class
+org\msuhail\java\home_project\service\SimpleCORSFilter.class
+org\msuhail\java\home_project\web\AuthenticationController.class
+org\msuhail\java\home_project\service\SessionFactory_Generation.class
+org\msuhail\java\home_project\mapper\Inventory_mapper.class
+org\msuhail\java\home_project\service\HashGenerator.class
+org\msuhail\java\home_project\web\InventoryController.class
+org\msuhail\java\home_project\service\Validate_User.class
+org\msuhail\java\home_project\DAO\Authenticate_Users.class
+org\msuhail\java\home_project\service\Inventory_Service.class
+org\msuhail\java\home_project\service\LocalizationService.class

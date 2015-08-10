@@ -1,0 +1,82 @@
+<p class="text-info">
+    <marquee behavior="scroll" direction="left">Please pay with Paypal before you leave </marquee>
+</p>
+
+<div class="container-fluid" id="tet">
+    <div class="row-fluid">
+        <div class="span8">
+
+            <!-- items -->
+            <table class="table table-bordered">
+
+                <!-- header -->
+                <tr class="well">
+                    <td><b>Item</b></td>
+                    <td class="tdCenter"><b>Quantity</b></td>
+                    <td class="tdRight"><b>Price</b></td>
+                    
+                </tr>
+
+                <!-- empty cart message -->
+                <tr ng-hide="gettotalitem()>0" >
+
+                    <td class="tdCenter" colspan="4">
+                        Your cart is empty.
+                    </td>
+                </tr>
+
+                <!-- cart items -->
+                <tr ng-repeat="item in inventory_list">
+                   
+                    <td ng-hide="item.quantity<1">{{item.name}}</td>
+                    <td ng-hide="item.quantity<1" class="tdCenter">
+                      <div class="input-append">
+                        <!-- use type=tel instead of  to prevent spinners -->
+                        <input type="number"
+                            class="span3 text-center" type="tel" 
+                            ng-model="item.quantity" 
+                            ng-change="saveinventory()" 
+                           
+                            />
+                        
+                      </div>
+                    </td>
+                    <td ng-hide="item.quantity<1" class="tdRight">{{item.price * item.quantity | currency}}</td>
+                    
+             
+                </tr>
+
+                <!-- footer -->
+                <tr class="well">
+                    <td><b>Total</b></td>
+                    <td class="tdCenter"><b>{{gettotalitem()}}</b></td>
+                    <td class="tdRight"><b>{{gettotalprice() | currency}}</b></td>
+                  
+                </tr>
+            </table>
+        </div>
+
+        <!-- buttons -->
+        <div class="span4">
+            <p class="text-info">
+                <button 
+                    class="btn btn-block" 
+                    onclick="window.location.href='index.html#/index'">
+                    <i class="icon-chevron-left" /> back to store
+                </button>
+                <button 
+                    class="btn btn-block btn-danger" 
+                    ng-click="clearItems()" 
+                    ng-disabled="gettotalitem() < 1" >
+                    <i class="icon-trash icon-white" /> clear cart
+                </button>
+            </p>
+
+            <br /><br />
+
+            <br /><br />
+
+          
+        </div>
+    </div>
+</div>

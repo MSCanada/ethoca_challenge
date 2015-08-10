@@ -1,0 +1,44 @@
+<p class="text-info">
+    <marquee behavior="scroll" direction="left">Welcome to Shopping Cart </marquee>
+</p>
+
+<p>
+    Search: <input ng-model="search">
+</p>
+
+<table class="table table-bordered">
+    <tr class="well">
+        <td class="tdRight" colspan="4" >
+            <img src="img/ordernow.png" height="30" width="80">
+            <a  href="index.html#/purchase"  title="go to shopping cart" >
+                <i class="icon-shopping-cart" />
+                <b>{{gettotalitem()}}</b> items, <b>{{gettotalprice() | currency}}</b>
+            </a>
+        </td>
+    </tr>
+    <tr ng-repeat="product in inventory_list  | filter:search" >
+        <td class="tdCenter"><img ng-src="{{product.ImageURL}}" alt="{{product.name}}" height="50" width="50" /></td>
+        <td>
+            <a href="" ng-click="modal($index)"><b>{{product.name}}</b></a><br />
+            {{product.description}}
+        </td>
+        <td class="tdRight">
+            {{product.price | currency}}
+        </td>
+        <td class="tdCenter">
+            <a href="" ng-click="addItem($index,1)">
+                add to cart
+            </a>
+        </td>
+
+    </tr>
+    <tr class="well">
+        <td class="tdRight" colspan="4">
+             <img src="img/ordernow.png" height="30" width="80">
+            <a href="index.html#/purchase" title="go to shopping cart" >
+                <i class="icon-shopping-cart" />
+                <b>{{gettotalitem()}}</b> items, <b>{{gettotalprice() | currency}}</b>
+            </a>
+        </td>
+    </tr>
+</table>
